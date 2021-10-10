@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./app.js"></script>
+<style>
+    #container {
+        width: 800px;
+        height: 800px;
+        border: solid 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+    }
+
+    #top {
+        height: 100px;
+        background-color: white;
+        position: relative;
+        /* display: flex;
+        justify-content: center;
+        align-items: flex-end; */
+    }
+
+    #hook {
+        border-radius: 50%;
+        background-color: palevioletred;
+
+        position: absolute;
+        z-index: 10;
+    }
+
+    #score {
+        position: absolute;
+    }
+    #target {
+        position: absolute;
+        right: 0;
+    }
+    #level {
+        position: absolute;
+        right: 150px;
+    }
+
+    #rotateOrigin {
+        width: 10px;
+        height: 10px;
+        /* left: 400px;
+        top: 50px; */
+        z-index: 10;
+        position: relative;
+        background-color:palevioletred;
+;
+    }
+
+    #mine {
+        background-color: antiquewhite;
+        flex: auto;
+        position: relative;
+    }
+
+    .gold {
+        background-color: gold;
+        border-radius: 20%;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="top">
+            <h1 id="score"></h1>
+            <h1 id="target"></h1>
+            <h1 id="level"></h1>
+            <div id="rotateOrigin" style="left: 400px; top: 50px;">
+                <div id="hook" style="width: 10px; height: 10px;"></div>
+            </div>
+        </div>
+        <div id="mine"></div>
+    </div>
+</body>
+
+</html>
