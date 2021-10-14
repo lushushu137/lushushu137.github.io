@@ -1,87 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<script src="./app.js"></script>
-<style>
-    #container {
-        width: 800px;
-        height: 800px;
-        border: solid 1px;
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
+  </head>
+  <style>
+    * {
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background-color: black;
+      --neonYellow: rgb(255, 192, 110);
+      --neonBlue:rgb(132, 118, 255);
+      --neonPurple:rgb(255, 187, 244);
+      --neonGreen:#0fa;
+    }
+    .section {
+      padding: 100px;
+      /* border: solid 1px white; */
+      overflow: hidden;
+    }
+    .neonGreen {
+      text-shadow: 0 0 7px #fff, 0 0 21px #fff, 0 0 42px var( --neonGreen),
+        0 0 82px var( --neonGreen), 0 0 102px var( --neonGreen), 0 0 151px var( --neonGreen);
+    }
+    .neonPurple {
+      text-shadow: 0 0 7px #fff, 0 0 21px #fff,
+        0 0 42px var(--neonPurple), 0 0 82px var(--neonPurple),
+         0 0 102px var(--neonPurple),
+        0 0 151px var(--neonPurple);
+    }
+    .neonYellow {
+      text-shadow: 0 0 7px #fff, 0 0 21px #fff,
+        0 0 42px var(--neonYellow), 
+        0 0 92px var(--neonYellow), 0 0 102px var(--neonYellow),
+        0 0 151px var(--neonYellow);
+    }
+    .neonBlue {
+      text-shadow: 0 0 7px #fff, 0 0 21px #fff,
+        0 0 42px var(--neonBlue), 
+        0 0 92px var(--neonBlue), 0 0 102px var(--neonBlue),
+        0 0 151px var(--neonBlue);
+    }
+    .header-intro {
+      padding: 100px;
+      text-align: center;
+      font-size: 20px;
+    }
+    h1,
+    h2,
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    h1 ,h2{
+      font-size: 150px;
     }
 
-    #top {
-        height: 100px;
-        background-color: white;
-        position: relative;
-        /* display: flex;
-        justify-content: center;
-        align-items: flex-end; */
+    h2 {
+      font-size: 80px;
     }
 
-    #hook {
-        border-radius: 50%;
-        background-color: palevioletred;
-
-        position: absolute;
-        z-index: 10;
+    h3 {
+      font-size: 50px;
+    }
+    .game {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative; 
+      z-index: 1;
     }
 
-    #score {
-        position: absolute;
+    .game::after {
+     content: '';
+     position: absolute; 
+     top:0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     transform: translate(-100%,0);
+     transition: transform 1s ease;
+      background: linear-gradient(to right, var(--neonPurple),rgb(169, 163, 255));
+      z-index: -1;
     }
-    #target {
-        position: absolute;
-        right: 0;
+    .game:hover::after{
+      transform: translate(0,0);
     }
-    #level {
-        position: absolute;
-        right: 150px;
+ 
+    .game-project {
+      width: 30vw;
+      height: 50vh;
+      margin: 20px;
+      border: solid 1px;
+      display: flex;
+      flex-direction: column;
+    }
+    .game-project-thumbnail {
+      border-bottom: solid 1px;
+      height: 70%;
+    }
+    .game-project-intro {
+      padding: 5px;
+      text-align: center;
+    }
+    .photogrpahy {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 20;
+      position: relative; 
+    }
+    .photogrpahy::after {
+     content: '';
+     position: absolute; 
+     top:0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     transform: translate(-100%,0);
+
+     transition: transform 1s ease;
+      background: linear-gradient(to right, rgb(255, 163, 120),var(--neonYellow));
+      z-index: -1;
+    }
+    .photogrpahy:hover::after{
+      transform: translate(0,0);
+
+    }
+ .photogrpahy-collection {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .photogrpahy-collection-photo {
+      flex-grow: 1;
+      margin: 10px;
+    }
+    .photogrpahy-collection-photo img{
+      min-width: 100%;
+      max-width:100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    #rotateOrigin {
-        width: 10px;
-        height: 10px;
-        /* left: 400px;
-        top: 50px; */
-        z-index: 10;
-        position: relative;
-        background-color:palevioletred;
-;
+    .skillset {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
     }
-
-    #mine {
-        background-color: antiquewhite;
-        flex: auto;
-        position: relative;
+    .skillset::after {
+     content: '';
+     position: absolute; 
+     top:0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     transform: translate(-100%,0);
+     transition: transform 1s ease;
+      background: linear-gradient(to right, var(--neonBlue),rgb(107, 253, 197));
+      z-index: -1;
     }
-
-    .gold {
-        background-color: gold;
-        border-radius: 20%;
+    .skillset:hover::after{
+      transform: translate(0,0);
     }
-</style>
-
-<body>
-    <div id="container">
-        <div id="top">
-            <h1 id="score"></h1>
-            <h1 id="target"></h1>
-            <h1 id="level"></h1>
-            <div id="rotateOrigin" style="left: 400px; top: 50px;">
-                <div id="hook" style="width: 10px; height: 10px;"></div>
-            </div>
+    .skillset-collection {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .skillset-collection-skill{
+      margin: 20px;
+    }
+    p::selection {
+      color: gold;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="section header">
+        <h1 class="neonGreen">Lu Shu</h1>
+        <h2 class="neonGreen">Personal Website</h2>
+        <p class="header-intro">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          aliquam aliquid voluptatibus placeat deserunt corrupti explicabo
+          minima cum iure ipsam, sed magni accusantium sunt omnis, dolorum
+          repudiandae cupiditate inventore temporibus.
+        </p>
+      </div>
+      <div class="section game">
+        <h3 class="neonPurple" style="text-align: start; margin-right: 20px">
+          web development
+        </h3>
+        <div class="game-project">
+          <div class="game-project-thumbnail"></div>
+          <p class="game-project-intro">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            quas neque? Eos laboriosam voluptatem magni voluptates eius ullam
+            earum, quibusdam dignissimos ab provident cumque saepe id asperiores
+            laborum. Excepturi, repudiandae.
+          </p>
         </div>
-        <div id="mine"></div>
-    </div>
-</body>
+        <div class="game-project">
+          <div class="game-project-thumbnail"></div>
+          <p class="game-project-intro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sed
+            facere ipsa sit quia corporis vel sunt quisquam aliquam aliquid.
+            Nostrum quasi eligendi officia. Tempore illum aperiam delectus
+            maiores perferendis.
+          </p>
+        </div>
+        <div class="game-project">
+          <div class="game-project-thumbnail"></div>
+          <p class="game-project-intro">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo,
+            nesciunt delectus corporis ex ducimus maxime illo maiores temporibus
+            ipsa sed libero facere, aperiam accusantium enim dolor, fuga dolores
+            rem recusandae.
+          </div>
+        </div>
+      </div>
+      <div class="section photogrpahy">
+        <h3 class="neonYellow" style="text-align: end; margin-left: 20px">
+          photography
+        </h3>
+        <div class="photogrpahy-collection">
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/001 (1).jpg"/>
+          </div>
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/001 (3).jpg"/>
+          </div>
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/001 (4).jpg"/>
+          </div>
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/001 (5).jpg"/>
+          </div>
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/001 (6).jpg"/>
+          </div>
 
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/001.jpg"/>
+          </div> 
+          
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/bridge.png"/>
+          </div>
+          
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/nofacegirl.png"/>
+          </div>
+        
+        
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/tree.png"/>
+          </div>
+          
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/bird.png"/>
+          </div>
+          
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/cat.png"/>
+          </div>
+          
+          <!-- <div class="photogrpahy-collection-photo">
+            <img src="./src/img/tree.png"/>
+          </div> -->
+        </div>
+        
+      </div>
+      <div class="section skillset">
+        <h3 class="neonBlue">Skillset</h3>
+        <div class="skillset-collection">
+          <div class="skillset-collection-skill" >
+            <progress value="50" max="100" style="margin-right: 10px;"></progress>HTML
+          </div>
+          <div class="skillset-collection-skill" >
+            <progress value="50" max="100" style="margin-right: 10px;"></progress>CSS
+          </div>
+          <div class="skillset-collection-skill" >
+            <progress value="50" max="100" style="margin-right: 10px;"></progress>JavaScript
+          </div>
+          <div class="skillset-collection-skill" >
+            <progress value="50" max="100" style="margin-right: 10px;"></progress>Python
+          </div>
+      </div>
+      <div class="skillset-collection">
+        <div class="skillset-collection-skill" >
+          <progress value="50" max="100" style="margin-right: 10px;"></progress>HTML
+        </div>
+        <div class="skillset-collection-skill" >
+          <progress value="50" max="100" style="margin-right: 10px;"></progress>CSS
+        </div>
+        <div class="skillset-collection-skill" >
+          <progress value="50" max="100" style="margin-right: 10px;"></progress>JavaScript
+        </div>
+        <div class="skillset-collection-skill" >
+          <progress value="50" max="100" style="margin-right: 10px;"></progress>Python
+        </div>
+    </div>
+    <div class="skillset-collection">
+      <div class="skillset-collection-skill" >
+        <progress value="50" max="100" style="margin-right: 10px;"></progress>HTML
+      </div>
+      <div class="skillset-collection-skill" >
+        <progress value="50" max="100" style="margin-right: 10px;"></progress>CSS
+      </div>
+      <div class="skillset-collection-skill" >
+        <progress value="50" max="100" style="margin-right: 10px;"></progress>JavaScript
+      </div>
+      <div class="skillset-collection-skill" >
+        <progress value="50" max="100" style="margin-right: 10px;"></progress>Python
+      </div>
+  </div>
+    </div>
+    </div>
+  </body>
 </html>
