@@ -4,24 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poiret+One&display=swap" rel="stylesheet">
+<title>Document</title>
   </head>
   <style>
     * {
       color: white;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth; 
+    }
+    a {
+      text-decoration: none;
     }
     body{
-      background-color: black;
-      --neonYellow: rgb(255, 192, 110);
-      --neonBlue:rgb(132, 118, 255);
-      --neonPurple:rgb(255, 187, 244);
-      --neonGreen:#0fa;
+      background:radial-gradient(rgb(148,47,58), rgba(0, 0, 0, 0.5)), url("./src/img/bg.jpeg");
+     
+      background-size:contain;
+      background-blend-mode: multiply;
+       /* background-color: black; */
+      --neonYellow: rgb(251, 255, 0);
+      --neonBlue:rgb(25, 0, 255);
+      --neonPurple:rgb(255, 0, 212);
+      --neonGreen:rgb(51, 255, 0);
+      --themeColor:rgb(148,47,58);
     }
+
     .section {
-      padding: 100px;
-      /* border: solid 1px white; */
+      padding: 80px 160px;
       overflow: hidden;
     }
     .neonGreen {
@@ -30,36 +41,43 @@
     }
     .neonPurple {
       text-shadow: 0 0 7px #fff, 0 0 21px #fff,
-        0 0 42px var(--neonPurple), 0 0 82px var(--neonPurple),
+        0 0 42px var(--neonPurple), 0 0 62px var(--neonPurple), 0 0 82px var(--neonPurple),
          0 0 102px var(--neonPurple),
-        0 0 151px var(--neonPurple);
+         0 0 132px var(--neonPurple),
+         0 0 151px var(--neonPurple);
     }
     .neonYellow {
       text-shadow: 0 0 7px #fff, 0 0 21px #fff,
         0 0 42px var(--neonYellow), 
-        0 0 92px var(--neonYellow), 0 0 102px var(--neonYellow),
-        0 0 151px var(--neonYellow);
+        0 0 62px var(--neonYellow), 
+         0 0 92px var(--neonYellow), 0 0 102px var(--neonYellow),
+        0 0 132px var(--neonYellow),        0 0 151px var(--neonYellow);
     }
     .neonBlue {
       text-shadow: 0 0 7px #fff, 0 0 21px #fff,
-        0 0 42px var(--neonBlue), 
+        0 0 42px var(--neonBlue),  0 0 62px var(--neonBlue), 
         0 0 92px var(--neonBlue), 0 0 102px var(--neonBlue),
-        0 0 151px var(--neonBlue);
+        0 0 132px var(--neonBlue),
+          0 0 151px var(--neonBlue);
     }
-    .header-intro {
-      padding: 100px;
-      text-align: center;
-      font-size: 20px;
+    p{
+      text-align: start;
+      margin-top: 10px;
+    }
+    p::selection {
+      color: gold;
     }
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
       text-align: center;
       text-transform: uppercase;
       font-weight: 400;
     }
-    h1 ,h2{
+    h1 {
       font-size: 150px;
+      font-family: 'Orbitron', sans-serif;
     }
 
     h2 {
@@ -68,16 +86,136 @@
 
     h3 {
       font-size: 50px;
+      font-family: 'Poiret One', cursive;
     }
+    h4 {
+      font-size: 20px;
+
+    }
+    h3:hover{
+      animation: blink 2s infinite;
+    }
+
+    .navBar{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      z-index: 20;
+      text-transform: uppercase;
+      max-height: 60px;
+    }
+    .navBar a {
+      font-size: 14px;
+      margin: 30px;
+      padding: 10px;
+      transition: border-bottom 0.2s ease;
+    } 
+    .navBar a:hover{
+      border-bottom: solid 3px var(--themeColor);
+    } 
+    .navBar a:active{
+      color: var(--themeColor);
+    }
+    .header {
+      position: relative;
+    }
+    @keyframes blink {
+      0%{
+        filter:hue-rotate(0deg)
+      }
+      50%{
+        filter:hue-rotate(180deg)
+      }
+      100%{
+        filter: hue-rotate(360deg);
+      }
+    }
+ 
+    .header-logo::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 500px;
+      height: 500px;
+      background:radial-gradient(var(--themeColor), transparent, transparent);
+      border-radius: 50%;
+      z-index: -1;
+
+    }
+
+    .header-logo::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1000px;
+      height: 1000px;
+      transform: translate(-300px,-300px);
+      background:radial-gradient(var(--themeColor), transparent, transparent);
+      border-radius: 50%;
+      z-index: -1;
+    }
+    .header-logo{
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* animation: blink 1s infinite; */
+    }
+    .header-logo:hover {
+      animation: blink 3s infinite;
+    }
+    svg path{
+      stroke: #fff;
+      stroke-width: 2px;
+      fill: transparent;
+      filter: drop-shadow(0px 3px 3px #000);
+    } 
+
+    .header-title{
+      width: calc(100vw - 500px - 300px);
+      position: relative;
+      left: 600px;
+      padding: 20px;
+
+    }
+    .header-title-avater {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+     .header-title .avater{
+       width: 100px;
+       height: 100px;
+       border-radius: 50%;
+      margin: 20px;
+      border: solid 2px white;
+     }   
+    .header-intro {
+      padding: 50px;
+      font-size: 20px;
+    }
+    .section-intro{
+      margin-top: 20px;
+    }
+    .intro{
+      max-width: 30vw;
+    }
+    
     .game {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-around;
       position: relative; 
       z-index: 1;
     }
 
-    .game::after {
+    /* .game::after {
      content: '';
      position: absolute; 
      top:0;
@@ -91,7 +229,7 @@
     }
     .game:hover::after{
       transform: translate(0,0);
-    }
+    } */
  
     .game-project {
       width: 30vw;
@@ -104,20 +242,43 @@
     .game-project-thumbnail {
       border-bottom: solid 1px;
       height: 70%;
+      background-size: cover;
+      background-position: top;
+      position: relative; 
+     }
+     .game-project-thumbnail::after{
+    content: 'PLAY';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+     position: absolute; 
+     top:0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+    transition: opacity 0.3s ease;
     }
+     .game-project-thumbnail:hover::after{
+      opacity:1
+     }
     .game-project-intro {
-      padding: 5px;
-      text-align: center;
+      padding: 10px;
+    }
+    .game-project-intro p{
+    margin-top: 10px;
     }
     .photogrpahy {
       display: flex;
+      align-items: flex-start;
       flex-direction: row-reverse;
-      align-items: center;
       justify-content: space-around;
       z-index: 20;
       position: relative; 
     }
-    .photogrpahy::after {
+    /* .photogrpahy::after {
      content: '';
      position: absolute; 
      top:0;
@@ -125,7 +286,6 @@
      right: 0;
      bottom: 0;
      transform: translate(-100%,0);
-
      transition: transform 1s ease;
       background: linear-gradient(to right, rgb(255, 163, 120),var(--neonYellow));
       z-index: -1;
@@ -133,7 +293,7 @@
     .photogrpahy:hover::after{
       transform: translate(0,0);
 
-    }
+    } */
  .photogrpahy-collection {
       display: flex;
       flex-wrap: wrap;
@@ -154,10 +314,11 @@
     .skillset {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       position: relative;
+      z-index: 1;
     }
-    .skillset::after {
+    /* .skillset::after {
      content: '';
      position: absolute; 
      top:0;
@@ -171,72 +332,153 @@
     }
     .skillset:hover::after{
       transform: translate(0,0);
-    }
+    } */
     .skillset-collection {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
     }
     .skillset-collection-skill{
       margin: 20px;
     }
-    p::selection {
-      color: gold;
+    progress[value]{
+      width: 250px;
+      height: 20px;
+      border-radius: 2px;
+    }
+    progress[value]::-webkit-progress-bar {
+      background-color: rgb(238, 238, 238);
+      border-radius: 2px;
+    }
+  progress[value]::-webkit-progress-value {
+    border-radius: 2px;
+      background-color: var(--themeColor);
+    }
+    .footer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(0, 0, 0);
+    }
+  
+    .top {
+      position:fixed;
+      z-index: 20;
+      left: 95vw;
+      bottom: 100px;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: inline-block;
+      opacity: 0.3;
+      transition: opacity 0.2s ease;
+      border-radius: 5px;
+      font-size: 15px;
+      text-align: center;
+      padding: 20px 15px;
+      color: black;
+    }
+    .top:hover{
+      opacity: 1;
     }
   </style>
   <body>
     <div class="container">
-      <div class="section header">
-        <h1 class="neonGreen">Lu Shu</h1>
-        <h2 class="neonGreen">Personal Website</h2>
-        <p class="header-intro">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          aliquam aliquid voluptatibus placeat deserunt corrupti explicabo
-          minima cum iure ipsam, sed magni accusantium sunt omnis, dolorum
-          repudiandae cupiditate inventore temporibus.
-        </p>
+      <div class="navBar">
+        <a href="#game">Web Development</a>
+        <a href="#photogrpahy">Photogrpahy</a>
+        <a href="#skillset">Skillset</a>
       </div>
-      <div class="section game">
-        <h3 class="neonPurple" style="text-align: start; margin-right: 20px">
-          web development
-        </h3>
-        <div class="game-project">
-          <div class="game-project-thumbnail"></div>
-          <p class="game-project-intro">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            quas neque? Eos laboriosam voluptatem magni voluptates eius ullam
-            earum, quibusdam dignissimos ab provident cumque saepe id asperiores
-            laborum. Excepturi, repudiandae.
-          </p>
+      <div id = "header" class="section header">
+       
+        <div class="header-logo">
+          <svg  width="500" height="500">
+            <g fill="var(--themeColor)" transform="scale(-1.8,1.8) translate(-300,-20)">
+              <path
+                transform="rotate(0, 155 150)"
+                d="M150 224 c-5.9 -1.9 -9.5 -5.0 -29.0 -24.6 -15.0 -15.1 -19.8 -20.4 -17.8 -20.0 1.4 0.4 5.2 0.1 8.3 -0.5 l5.7 -1.2 16.7 16.5 c10.2 10.2 17.7 16.8 19.4 17.2 3.9 1.0 7.5 -0.2 10.8 -3.5 2.4 -2.3 2.9 -3.7 2.9 -7.5 0.0 -4.3 -0.4 -5.1 -5.5 -10.3 l-5.4 -5.7 -5.8 5.8 -5.9 5.7 -4.7 -4.8 -4.7 -4.7 16.5 -16.5 16.5 -16.5 4.7 4.8 4.8 4.7 -6.0 6.0 -5.9 5.9 5.8 6.0 c6.9 7.3 8.9 11.7 8.9 19.6 0.0 9.4 -4.9 17.2 -13.7 21.7 -4.3 2.2 -12.8 3.2 -16.6 1.9z "
+              />
+              <path
+                transform="rotate(90, 155 150)"
+                d="M150 224 c-5.9 -1.9 -9.5 -5.0 -29.0 -24.6 -15.0 -15.1 -19.8 -20.4 -17.8 -20.0 1.4 0.4 5.2 0.1 8.3 -0.5 l5.7 -1.2 16.7 16.5 c10.2 10.2 17.7 16.8 19.4 17.2 3.9 1.0 7.5 -0.2 10.8 -3.5 2.4 -2.3 2.9 -3.7 2.9 -7.5 0.0 -4.3 -0.4 -5.1 -5.5 -10.3 l-5.4 -5.7 -5.8 5.8 -5.9 5.7 -4.7 -4.8 -4.7 -4.7 16.5 -16.5 16.5 -16.5 4.7 4.8 4.8 4.7 -6.0 6.0 -5.9 5.9 5.8 6.0 c6.9 7.3 8.9 11.7 8.9 19.6 0.0 9.4 -4.9 17.2 -13.7 21.7 -4.3 2.2 -12.8 3.2 -16.6 1.9z "
+              />
+              <path
+                transform="rotate(180, 155 150)"
+                d="M150 224 c-5.9 -1.9 -9.5 -5.0 -29.0 -24.6 -15.0 -15.1 -19.8 -20.4 -17.8 -20.0 1.4 0.4 5.2 0.1 8.3 -0.5 l5.7 -1.2 16.7 16.5 c10.2 10.2 17.7 16.8 19.4 17.2 3.9 1.0 7.5 -0.2 10.8 -3.5 2.4 -2.3 2.9 -3.7 2.9 -7.5 0.0 -4.3 -0.4 -5.1 -5.5 -10.3 l-5.4 -5.7 -5.8 5.8 -5.9 5.7 -4.7 -4.8 -4.7 -4.7 16.5 -16.5 16.5 -16.5 4.7 4.8 4.8 4.7 -6.0 6.0 -5.9 5.9 5.8 6.0 c6.9 7.3 8.9 11.7 8.9 19.6 0.0 9.4 -4.9 17.2 -13.7 21.7 -4.3 2.2 -12.8 3.2 -16.6 1.9z "
+              />
+              <path
+                transform="rotate(-90, 155 150)"
+                d="M150 224 c-5.9 -1.9 -9.5 -5.0 -29.0 -24.6 -15.0 -15.1 -19.8 -20.4 -17.8 -20.0 1.4 0.4 5.2 0.1 8.3 -0.5 l5.7 -1.2 16.7 16.5 c10.2 10.2 17.7 16.8 19.4 17.2 3.9 1.0 7.5 -0.2 10.8 -3.5 2.4 -2.3 2.9 -3.7 2.9 -7.5 0.0 -4.3 -0.4 -5.1 -5.5 -10.3 l-5.4 -5.7 -5.8 5.8 -5.9 5.7 -4.7 -4.8 -4.7 -4.7 16.5 -16.5 16.5 -16.5 4.7 4.8 4.8 4.7 -6.0 6.0 -5.9 5.9 5.8 6.0 c6.9 7.3 8.9 11.7 8.9 19.6 0.0 9.4 -4.9 17.2 -13.7 21.7 -4.3 2.2 -12.8 3.2 -16.6 1.9z "
+              />
+            </g>
+          </svg> 
         </div>
-        <div class="game-project">
-          <div class="game-project-thumbnail"></div>
-          <p class="game-project-intro">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sed
-            facere ipsa sit quia corporis vel sunt quisquam aliquam aliquid.
-            Nostrum quasi eligendi officia. Tempore illum aperiam delectus
-            maiores perferendis.
-          </p>
+        <div class="header-title">
+          <h1 >Lu Shu</h1>
+          <div class="header-title-avater">
+            <img class="avater" src="./src/img/avater.png"/>
+            <h3>Personal Website</h3>
+          </div>
+          <p class="header-intro">
+          I am currently a master student in Department of Design at PolyU. I major in Multimedia and Entertainment Technology, streaming in Game Development. I obtained my Bachelor of Management degree in the Communication University of China, majored in Cultural Industry Management.  </br>
+        </br>
+        I'm interesed in making indie games. I'm learning Unity and C# now. Looking forward to attending game jams or hackathons. </br>
+          </br>Glad to see you.
+          </p> 
         </div>
-        <div class="game-project">
-          <div class="game-project-thumbnail"></div>
-          <p class="game-project-intro">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo,
-            nesciunt delectus corporis ex ducimus maxime illo maiores temporibus
-            ipsa sed libero facere, aperiam accusantium enim dolor, fuga dolores
-            rem recusandae.
+       
+      </div>
+      <div id ="game" class="section game">
+        <div class="section-intro">
+          <h3 class="neonPurple" style="text-align: start; margin-right: 20px">
+            web development
+          </h3>
+          <div class="intro">
+            <p>I learned JavaScript on MOOC by myself. I wrote several mini projects to practice my development skill.</p>
           </div>
         </div>
-      </div>
-      <div class="section photogrpahy">
-        <h3 class="neonYellow" style="text-align: end; margin-left: 20px">
-          photography
-        </h3>
+        
+        <div class="game-project">
+            <a class="game-project-thumbnail" href="https://lushushu137.github.io/Gold-Miner/" target="_blank" style="background-image: url(./src/img/goldminerthumbnail.png)">
+            </a>
+          <div class="game-project-intro">
+            <h4>Gold Miner Mini Game</h3>
+            <p>I write this program to practice state-machine design in game development. It's pure JavaScript.</p>
+          </div>
+        </div>
+        <div class="game-project">
+          <a href="https://lushushu137.github.io/Brick-Breaker/" target="_blank" class="game-project-thumbnail" style="background-image: url(./src/img/brickbreakerthumbnail.png)">
+
+          </a>
+          <div class="game-project-intro">
+            <h4>Brick Breaker Mini Game</h3>
+              <p>It is my first pure JavaScript program. I wrote this to learn the basis of JavaScript, like the interval, eventListener, and collision detection, etc.</p>
+            </div>
+        </div>
+        <div class="game-project">
+            <a href="https://lushushu137.github.io/todo-list/docs/" target="_blank" class="game-project-thumbnail" style="background-image: url(./src/img/todolistthumbnail.png)">
+            </a>
+          <div class="game-project-intro">
+            <h4>Todo List Application</h3>
+              <p> I wrote this application to learn React. I built two versions of it, which are functional components and class components respectively. I learned the MVC design pattern, state hoisting, and the basis of React. </p>
+          </div>
+          </div>
+        </div>
+      
+      <div id ="photogrpahy" class="section photogrpahy">
+        <div class="section-intro" style="text-align: end; margin-left: 20px">
+          <h3 class="neonYellow"  style="text-align: end;">
+            photography
+          </h3>
+          <div class="intro">
+          <p>I like photography very much. I learned darkroom skills when I attended the summer school of UCLA in 2016. My film camera is PENTAX MX.</p>
+          </div>
+        </div>
+       
         <div class="photogrpahy-collection">
           <div class="photogrpahy-collection-photo">
-            <img src="./src/img/001 (1).jpg"/>
+            <img src="./src/img/cat.png"/>
           </div>
           <div class="photogrpahy-collection-photo">
             <img src="./src/img/001 (3).jpg"/>
@@ -252,7 +494,7 @@
           </div>
 
           <div class="photogrpahy-collection-photo">
-            <img src="./src/img/001.jpg"/>
+            <img src="./src/img/001 (1).jpg"/>
           </div> 
           
           <div class="photogrpahy-collection-photo">
@@ -273,60 +515,65 @@
           </div>
           
           <div class="photogrpahy-collection-photo">
-            <img src="./src/img/cat.png"/>
+            <img src="./src/img/001.jpg"/>
           </div>
           
-          <!-- <div class="photogrpahy-collection-photo">
-            <img src="./src/img/tree.png"/>
-          </div> -->
+          <div class="photogrpahy-collection-photo">
+            <img src="./src/img/snowbus.png"/>
+          </div>
         </div>
         
       </div>
-      <div class="section skillset">
-        <h3 class="neonBlue">Skillset</h3>
+      <div id ="skillset" class="section skillset">
+        <div class="section-intro">
+          <h3 class="neonGreen">Skillset</h3>
+          <p>I need to learn more backend knowledge.</p>
+        </div>
         <div class="skillset-collection">
           <div class="skillset-collection-skill" >
-            <progress value="50" max="100" style="margin-right: 10px;"></progress>HTML
+            <progress value="60" max="100" style="margin-right: 10px;"></progress>HTML
           </div>
           <div class="skillset-collection-skill" >
-            <progress value="50" max="100" style="margin-right: 10px;"></progress>CSS
+            <progress value="60" max="100" style="margin-right: 10px;"></progress>CSS
           </div>
           <div class="skillset-collection-skill" >
-            <progress value="50" max="100" style="margin-right: 10px;"></progress>JavaScript
+            <progress value="80" max="100" style="margin-right: 10px;"></progress>JavaScript
           </div>
           <div class="skillset-collection-skill" >
-            <progress value="50" max="100" style="margin-right: 10px;"></progress>Python
+            <progress value="40" max="100" style="margin-right: 10px;"></progress>Python
+          </div>
+        </div>
+        <div class="skillset-collection">
+          <div class="skillset-collection-skill" >
+            <progress value="70" max="100" style="margin-right: 10px;"></progress>React
+          </div>
+          <div class="skillset-collection-skill" >
+            <progress value="60" max="100" style="margin-right: 10px;"></progress>Angular
+          </div>
+          <div class="skillset-collection-skill" >
+            <progress value="50" max="100" style="margin-right: 10px;"></progress>Node
+          </div>
+          <div class="skillset-collection-skill" >
+            <progress value="70" max="100" style="margin-right: 10px;"></progress>Git
           </div>
       </div>
       <div class="skillset-collection">
         <div class="skillset-collection-skill" >
-          <progress value="50" max="100" style="margin-right: 10px;"></progress>HTML
+          <progress value="50" max="100" style="margin-right: 10px;"></progress>Unity
         </div>
         <div class="skillset-collection-skill" >
-          <progress value="50" max="100" style="margin-right: 10px;"></progress>CSS
+          <progress value="30" max="100" style="margin-right: 10px;"></progress>C#
         </div>
-        <div class="skillset-collection-skill" >
-          <progress value="50" max="100" style="margin-right: 10px;"></progress>JavaScript
-        </div>
-        <div class="skillset-collection-skill" >
-          <progress value="50" max="100" style="margin-right: 10px;"></progress>Python
-        </div>
-    </div>
-    <div class="skillset-collection">
-      <div class="skillset-collection-skill" >
-        <progress value="50" max="100" style="margin-right: 10px;"></progress>HTML
-      </div>
-      <div class="skillset-collection-skill" >
-        <progress value="50" max="100" style="margin-right: 10px;"></progress>CSS
-      </div>
-      <div class="skillset-collection-skill" >
-        <progress value="50" max="100" style="margin-right: 10px;"></progress>JavaScript
-      </div>
-      <div class="skillset-collection-skill" >
-        <progress value="50" max="100" style="margin-right: 10px;"></progress>Python
       </div>
   </div>
-    </div>
-    </div>
-  </body>
+      </div>
+      <div class="section footer">
+        <h4>Contact Me</h4>
+        <p>E-mail: lushu1995@outlook.com</p>
+      </div>
+      <a href="#" class="top">TOP</a>
+
+      </div>
+  </div>
+</body>
 </html>
