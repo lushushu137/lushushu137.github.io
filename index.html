@@ -25,15 +25,20 @@
       background-blend-mode: multiply;
        /* background-color: black; */
       --neonYellow: rgb(251, 255, 0);
-      --neonBlue:rgb(25, 0, 255);
+      --neonBlue:rgb(0, 162, 255);
       --neonPurple:rgb(255, 0, 212);
       --neonGreen:rgb(51, 255, 0);
+      --neonRed:rgb(255, 51, 0);
       --themeColor:rgb(148,47,58);
     }
 
     .section {
-      padding: 80px 160px;
+      padding: 80px 120px;
       overflow: hidden;
+    }
+    .neonRed {
+      text-shadow: 0 0 7px #fff, 0 0 21px #fff, 0 0 42px var( --neonRed),
+        0 0 82px var( --neonRed), 0 0 102px var( --neonRed), 0 0 151px var( --neonRed);
     }
     .neonGreen {
       text-shadow: 0 0 7px #fff, 0 0 21px #fff, 0 0 42px var( --neonGreen),
@@ -67,16 +72,20 @@
     p::selection {
       color: gold;
     }
+    .small-text{
+      font-size: 10px;
+    }
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    h5 {
       text-align: center;
       text-transform: uppercase;
       font-weight: 400;
     }
     h1 {
-      font-size: 150px;
+      font-size: 100px;
       font-family: 'Orbitron', sans-serif;
     }
 
@@ -106,6 +115,7 @@
       z-index: 20;
       text-transform: uppercase;
       max-height: 60px;
+      font-family: 'Poiret One', cursive;
     }
     .navBar a {
       font-size: 14px;
@@ -178,11 +188,9 @@
     } 
 
     .header-title{
-      width: calc(100vw - 500px - 300px);
+      width:60%;
       position: relative;
-      left: 600px;
-      padding: 20px;
-
+      left: 500px;
     }
     .header-title-avater {
       display: flex;
@@ -197,14 +205,14 @@
       border: solid 2px white;
      }   
     .header-intro {
-      padding: 50px;
+      padding: 30px;
       font-size: 20px;
     }
     .section-intro{
       margin-top: 20px;
     }
     .intro{
-      max-width: 30vw;
+      max-width: 20vw;
     }
     
     .game {
@@ -214,25 +222,9 @@
       position: relative; 
       z-index: 1;
     }
-
-    /* .game::after {
-     content: '';
-     position: absolute; 
-     top:0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     transform: translate(-100%,0);
-     transition: transform 1s ease;
-      background: linear-gradient(to right, var(--neonPurple),rgb(169, 163, 255));
-      z-index: -1;
-    }
-    .game:hover::after{
-      transform: translate(0,0);
-    } */
  
     .game-project {
-      width: 30vw;
+      width: 40vw;
       height: 50vh;
       margin: 20px;
       border: solid 1px;
@@ -241,7 +233,7 @@
     }
     .game-project-thumbnail {
       border-bottom: solid 1px;
-      height: 70%;
+      min-height: 70%;
       background-size: cover;
       background-position: top;
       position: relative; 
@@ -265,11 +257,11 @@
       opacity:1
      }
     .game-project-intro {
+      overflow: hidden;
+      max-height: 100px;
       padding: 10px;
     }
-    .game-project-intro p{
-    margin-top: 10px;
-    }
+
     .photogrpahy {
       display: flex;
       align-items: flex-start;
@@ -278,22 +270,7 @@
       z-index: 20;
       position: relative; 
     }
-    /* .photogrpahy::after {
-     content: '';
-     position: absolute; 
-     top:0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     transform: translate(-100%,0);
-     transition: transform 1s ease;
-      background: linear-gradient(to right, rgb(255, 163, 120),var(--neonYellow));
-      z-index: -1;
-    }
-    .photogrpahy:hover::after{
-      transform: translate(0,0);
 
-    } */
  .photogrpahy-collection {
       display: flex;
       flex-wrap: wrap;
@@ -318,21 +295,7 @@
       position: relative;
       z-index: 1;
     }
-    /* .skillset::after {
-     content: '';
-     position: absolute; 
-     top:0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     transform: translate(-100%,0);
-     transition: transform 1s ease;
-      background: linear-gradient(to right, var(--neonBlue),rgb(107, 253, 197));
-      z-index: -1;
-    }
-    .skillset:hover::after{
-      transform: translate(0,0);
-    } */
+
     .skillset-collection {
       margin-top: 20px;
       display: flex;
@@ -344,16 +307,21 @@
       margin: 20px;
     }
     progress[value]{
-      width: 250px;
-      height: 20px;
+      width: 200px;
+      height: 15px;
       border-radius: 2px;
     }
     progress[value]::-webkit-progress-bar {
-      background-color: rgb(238, 238, 238);
+     
+      box-shadow:  0 0 7px #fff, 0 0 21px var( --themeColor),
+        0 0 82px var( --themeColor);
+         background-color: rgb(238, 238, 238);
       border-radius: 2px;
     }
   progress[value]::-webkit-progress-value {
-    border-radius: 2px;
+    
+      box-shadow:  0 0 7px #fff, 0 0 21px var( --themeColor),
+        0 0 82px var( --themeColor);border-radius: 2px;
       background-color: var(--themeColor);
     }
     .footer{
@@ -361,7 +329,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: rgb(0, 0, 0);
+      background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
     }
   
     .top {
@@ -443,8 +411,8 @@
             <a class="game-project-thumbnail" href="https://lushushu137.github.io/Gold-Miner/" target="_blank" style="background-image: url(./src/img/goldminerthumbnail.png)">
             </a>
           <div class="game-project-intro">
-            <h4>Gold Miner Mini Game</h3>
-            <p>I write this program to practice state-machine design in game development. It's pure JavaScript.</p>
+            <h5>Gold Miner Mini Game</h5>
+            <p class="small-text">I write this program to practice state-machine design in game development. It's pure JavaScript.</p>
           </div>
         </div>
         <div class="game-project">
@@ -452,37 +420,38 @@
 
           </a>
           <div class="game-project-intro">
-            <h4>Brick Breaker Mini Game</h3>
-              <p>It is my first pure JavaScript program. I wrote this to learn the basis of JavaScript, like the interval, eventListener, and collision detection, etc.</p>
+            <h5>Brick Breaker Mini Game</h5>
+              <p class="small-text">It is my first pure JavaScript program. I wrote this to learn the basis of JavaScript, like the interval, eventListener, and collision detection, etc.</p>
             </div>
         </div>
         <div class="game-project">
             <a href="https://lushushu137.github.io/todo-list/docs/" target="_blank" class="game-project-thumbnail" style="background-image: url(./src/img/todolistthumbnail.png)">
             </a>
           <div class="game-project-intro">
-            <h4>Todo List Application</h3>
-              <p> I wrote this application to learn React. I built two versions of it, which are functional components and class components respectively. I learned the MVC design pattern, state hoisting, and the basis of React. </p>
+            <h5>Todo List Application</h5>
+              <p class="small-text"> I wrote this application to learn React. I learned the MVC design pattern, state hoisting, and the basis of React. </p>
           </div>
           </div>
         </div>
       
       <div id ="photogrpahy" class="section photogrpahy">
-        <div class="section-intro" style="text-align: end; margin-left: 20px">
-          <h3 class="neonYellow"  style="text-align: end;">
-            photography
-          </h3>
-          <div class="intro">
-          <p>I like photography very much. I learned darkroom skills when I attended the summer school of UCLA in 2016. My film camera is PENTAX MX.</p>
-          </div>
-        </div>
+       
        
         <div class="photogrpahy-collection">
-          <div class="photogrpahy-collection-photo">
+          <div class="photogrpahy-collection-photo"   style="display: flex;flex-direction: column;justify-content: center;align-items: flex-start;">
+            <h3 class="neonYellow">
+              photography
+            </h3>
+            <div class="intro">
+            <p>I like photography very much. I learned darkroom skills when I attended the summer school of UCLA in 2016. My film camera is PENTAX MX.</p>
+            </div>
+          </div> <div class="photogrpahy-collection-photo">
             <img src="./src/img/cat.png"/>
           </div>
           <div class="photogrpahy-collection-photo">
             <img src="./src/img/001 (3).jpg"/>
           </div>
+          
           <div class="photogrpahy-collection-photo">
             <img src="./src/img/001 (4).jpg"/>
           </div>
@@ -526,7 +495,7 @@
       </div>
       <div id ="skillset" class="section skillset">
         <div class="section-intro">
-          <h3 class="neonGreen">Skillset</h3>
+          <h3 class="neonRed" style="text-align: start; margin-right: 20px">Skillset</h3>
           <p>I need to learn more backend knowledge.</p>
         </div>
         <div class="skillset-collection">
