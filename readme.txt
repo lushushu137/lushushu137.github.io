@@ -7,10 +7,10 @@
 - The hover effect works by setting an animation that rotates the hue 360 degrees from 0% to 100%, so that it ends with the same color as it started.
 - The transition is then set to an ease property on the element to which the animation is applied, making the color change silky smooth and continuous.
 
-## Pseudo-classes
+## Pseudo-elements
 
-- I use a pseudo-class to make the neon glow of the logo.
-- I also use a pseudo-class to make the game-project-thumbnail mask so it doesn't have to use an html element to make the darker hover effect.
+- I use a pseudo-elements to make the neon glow of the logo.
+- I also use a pseudo-elements to make the game-project-thumbnail mask so it doesn't have to use an html element to make the darker hover effect.
 
 ## Flex
 
