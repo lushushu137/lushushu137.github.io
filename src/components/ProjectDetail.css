@@ -1,0 +1,67 @@
+
+.project-detail__backdrop{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(33, 33, 33, 0.333);
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-detail__card{
+    position: relative;
+    background-color: #fff;
+    width: 850px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: -6px 6px 36px 0 #bcc3d2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.project-detail__close{
+    position: absolute !important;
+    top: 10px;
+    right: 10px;
+}
+
+.project-detail-left, .project-detail-right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    padding: 20px 10px;
+    z-index: 1;
+    box-sizing: border-box;
+
+}
+.project-detail-left{
+    align-items: center;
+}
+
+.project-detail-left__link-icon{
+    vertical-align: middle;
+    margin-left: 0.5em;
+}
+
+.project-detail-left__intro{
+    margin-bottom: 20px;
+}
+
+.project-detail-left__gifs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.project-detail-right{
+    gap: 15px;
+}
