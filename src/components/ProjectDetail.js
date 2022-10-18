@@ -24,7 +24,7 @@ const ProjectDetail = (props) => {
       >
         <div className="project-detail-left">
           <div className="project-detail-left__title">
-            <Link href={href} underline="none" color="primary">
+            <Link href={href} underline="none" color="primary" target="_blank">
               <Typography gutterBottom variant="h4" align="center">
                 {title}
                 <OpenInNewIcon className="project-detail-left__link-icon" />
