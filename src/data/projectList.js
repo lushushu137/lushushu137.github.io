@@ -119,6 +119,29 @@ export const dataList = [
     gifs: [datadisplayGif, searchGif],
   },
   {
+    id: "golden-miner",
+    title: "Golden Miner",
+    intro: "A simple, retro, classic Golden Miner.",
+    img: goldenMinerImg,
+    href: "https://lushushu137.github.io/COMP5322-Final-Term/front-end/Login/Login.html",
+    tags: ["JavaScript", "HTML", "CSS"],
+    background:
+      "This is the final project for the course of Internet Computing and Application course for my master's study. It is based on the classic game mechanic of Golden Miner. I added some features to it, inlcuding mocking login, rank, and achievement. I use sessionStorage to store all these information because there is no backend.",
+    techstack: [
+      {
+        name: "JavaScript",
+        intro:
+          "I used template tag to reuse the DOM elements and to simulate components. I implemented the rest features using vanilla JavaScript, including motion control with a finite state machine, collision detection, mock ranking, and an achievement system.",
+      },
+      {
+        name: "CSS",
+        intro:
+          "I applied CSS media query and border-image to make it mobile compatible. ",
+      },
+    ],
+    gifs: [entercomputerGif, playgoldminerGif],
+  },
+  {
     id: "harder-please",
     title: "Harder, Please",
     intro:
@@ -144,64 +167,6 @@ export const dataList = [
       },
     ],
     gifs: [scrubkeyboardGif, scrubGif],
-  },
-
-  {
-    id: "todo-list",
-    title: "Todo List",
-    intro: "A simple todo list.",
-    img: todoListImg,
-    href: "https://lushushu137.github.io/todo-list/",
-    tags: ["create-react-app", "React"],
-    background:
-      "This is the first app I made when I learned React and TypeScript. It uses functional components. ",
-    techstack: [
-      {
-        name: "Create React App",
-        intro: "Simple and easy to start.",
-      },
-      {
-        name: "TypeScript",
-        intro:
-          "Through making this little app, I learn the features of types, interface, PropType, etc of TypeScrpt.",
-      },
-    ],
-    gifs: [todoGif],
-  },
-  {
-    id: "golden-miner",
-    title: "Golden Miner",
-    intro: "A simple, retro, classic Golden Miner.",
-    img: goldenMinerImg,
-    href: "https://lushushu137.github.io/COMP5322-Final-Term/front-end/Login/Login.html",
-    tags: ["JavaScript", "HTML", "CSS"],
-    background:
-      "This is the final project for the course of Internet Computing and Application course for my master's study. It is based on the classic game mechanic of Golden Miner. I added some features to it, inlcuding mocking login, rank, and achievement. I use sessionStorage to store all these information because there is no backend.",
-    techstack: [
-      {
-        name: "JavaScript",
-        intro:
-          "I used template tag to reuse the DOM elements and to simulate components. I implemented the rest features using vanilla JavaScript, including motion control with a finite state machine, collision detection, mock ranking, and an achievement system.",
-      },
-      {
-        name: "CSS",
-        intro:
-          "I applied CSS media query and border-image to make it mobile compatible. ",
-      },
-    ],
-    gifs: [entercomputerGif, playgoldminerGif],
-  },
-  {
-    id: "brick-breaker",
-    title: "Brick Breaker",
-    intro: "A simple, retro, classic Brick Breaker.",
-    img: brickBreakerImg,
-    href: "https://lushushu137.github.io/Brick-Breaker/",
-    tags: ["JavaScript", "HTML", "CSS"],
-    background:
-      "My first mini project when I learn JavaScript. Pure JavaScript, HTML and CSS.",
-    techstack: [],
-    gifs: [brickbreakerGif],
   },
   {
     id: "social-phobia-simulator",
@@ -231,5 +196,40 @@ export const dataList = [
       },
     ],
     gifs: [spnormalGif, spGif],
+  },
+  {
+    id: "todo-list",
+    title: "Todo List",
+    intro: "A simple todo list.",
+    img: todoListImg,
+    href: "https://lushushu137.github.io/todo-list/",
+    tags: ["create-react-app", "React"],
+    background:
+      "This is the first app I made when I learned React and TypeScript. It uses functional components. ",
+    techstack: [
+      {
+        name: "Create React App",
+        intro: "Simple and easy to start.",
+      },
+      {
+        name: "TypeScript",
+        intro:
+          "Through making this little app, I learn the features of types, interface, PropType, etc of TypeScrpt.",
+      },
+    ],
+    gifs: [todoGif],
+  },
+
+  {
+    id: "brick-breaker",
+    title: "Brick Breaker",
+    intro: "A simple, retro, classic Brick Breaker.",
+    img: brickBreakerImg,
+    href: "https://lushushu137.github.io/Brick-Breaker/",
+    tags: ["JavaScript", "HTML", "CSS"],
+    background:
+      "My first mini project when I learn JavaScript. Pure JavaScript, HTML and CSS.",
+    techstack: [],
+    gifs: [brickbreakerGif],
   },
 ];

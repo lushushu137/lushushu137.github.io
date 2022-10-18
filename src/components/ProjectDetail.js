@@ -10,26 +10,42 @@ import { Divider, Link, IconButton } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const ProjectDetail = (props) => {
+  const isMobile = "ontouchstart" in document.documentElement;
   const { id, title, intro, href, img, background, onClose, techstack, gifs } =
     props;
   return (
     <motion.div
       exit={{ opacity: 0, transition: { duration: 0.15 } }}
       className="project-detail__backdrop"
+      onClick={onClose}
     >
       <motion.div
         layoutId={id}
         className="project-detail__card"
         style={{ borderRadius: 20 }}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
       >
         <div className="project-detail-left">
           <div className="project-detail-left__title">
-            <Link href={href} underline="none" color="primary" target="_blank">
+            {isMobile ? (
               <Typography gutterBottom variant="h4" align="center">
                 {title}
-                <OpenInNewIcon className="project-detail-left__link-icon" />
               </Typography>
-            </Link>
+            ) : (
+              <Link
+                href={href}
+                underline="none"
+                color="primary"
+                target="_blank"
+              >
+                <Typography gutterBottom variant="h4" align="center">
+                  {title}
+                  <OpenInNewIcon className="project-detail-left__link-icon" />
+                </Typography>
+              </Link>
+            )}
           </div>
 
           <div className="project-detail-left__intro">
@@ -84,12 +100,6 @@ const ProjectDetail = (props) => {
         >
           <CloseIcon />
         </IconButton>
-        {/* <Button
-          className="project-detail__close"
-          startIcon={<CloseIcon />}
-          disableRipple
-          onClick={onClose}
-        ></Button> */}
       </motion.div>
     </motion.div>
   );
