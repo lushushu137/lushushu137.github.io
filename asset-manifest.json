@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1c27d610.css",
-    "main.js": "/static/js/main.97ecf247.js",
+    "main.js": "/static/js/main.5991b724.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/spnormal.gif": "/static/media/spnormal.2607fd6badf171c6f4a6.gif",
     "static/media/sp.gif": "/static/media/sp.b79ffc7b2c3e7469af9f.gif",
@@ -13,15 +13,19 @@
     "static/media/socialphobiathumbnail.png": "/static/media/socialphobiathumbnail.4219819d7567d3e49203.png",
     "static/media/wish-planet.png": "/static/media/wish-planet.4e7c404e0432106c536d.png",
     "static/media/datadisplay.gif": "/static/media/datadisplay.091364390378776b2daa.gif",
+    "static/media/makecoffee.gif": "/static/media/makecoffee.5ebfcf3ac20717f3d549.gif",
+    "static/media/bang.gif": "/static/media/bang.a2b5bb8912aea5465aae.gif",
     "static/media/entercomputer.gif": "/static/media/entercomputer.6ce4cfcd1a32d0fbb23e.gif",
     "static/media/brickbreaker.gif": "/static/media/brickbreaker.c6ec20b642101123ce5d.gif",
     "static/media/checkwish.gif": "/static/media/checkwish.ef36b08c2ac791a48831.gif",
     "static/media/greengoldminer.png": "/static/media/greengoldminer.2c03980b420b49338826.png",
     "static/media/search.gif": "/static/media/search.163109304bd1bb7cbffb.gif",
     "static/media/playgoldminer.gif": "/static/media/playgoldminer.4d61ff41ed11399baba8.gif",
+    "static/media/turnpage.gif": "/static/media/turnpage.826a99bff345f77f037b.gif",
     "static/media/scrubkeyboard.gif": "/static/media/scrubkeyboard.9e65837cc09aa4bb7669.gif",
     "static/media/harderplease.png": "/static/media/harderplease.8ba018549a1f2b190763.png",
     "static/media/myAvatar.png": "/static/media/myAvatar.a29e11b5eb095c267ff4.png",
+    "static/media/balance.png": "/static/media/balance.00f3fd952ca41dc7ddb5.png",
     "static/media/breeze.jpg": "/static/media/breeze.337dce991c54431d5a8c.jpg",
     "static/media/tellwish.gif": "/static/media/tellwish.9f5d78f8d1c611c5c6d5.gif",
     "static/media/todo.gif": "/static/media/todo.c010cc96df2c392db3a0.gif",
@@ -32,11 +36,11 @@
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.1c27d610.css.map": "/static/css/main.1c27d610.css.map",
-    "main.97ecf247.js.map": "/static/js/main.97ecf247.js.map",
+    "main.5991b724.js.map": "/static/js/main.5991b724.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c27d610.css",
-    "static/js/main.97ecf247.js"
+    "static/js/main.5991b724.js"
   ]
 }
