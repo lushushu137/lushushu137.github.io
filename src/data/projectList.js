@@ -1,6 +1,7 @@
 import wishPlanetImg from "../assets/image/wish-planet.png";
 import breezeImg from "../assets/image/breeze.jpg";
 import rickandmortyImg from "../assets/image/rickandmortycontact.png";
+import balanceGif from "../assets/image/balance.png";
 import harderPleaseImg from "../assets/image/harderplease.png";
 import goldenMinerImg from "../assets/image/greengoldminer.png";
 import brickBreakerImg from "../assets/image/brickbreakerthumbnail.png";
@@ -22,6 +23,9 @@ import playgoldminerGif from "../assets/gifs/playgoldminer.gif";
 import brickbreakerGif from "../assets/gifs/brickbreaker.gif";
 import spnormalGif from "../assets/gifs/spnormal.gif";
 import spGif from "../assets/gifs/sp.gif";
+import turnpageGif from "../assets/gifs/turnpage.gif";
+import makecoffeeGif from "../assets/gifs/makecoffee.gif";
+import bangGif from "../assets/gifs/bang.gif";
 
 export const dataList = [
   {
@@ -117,6 +121,28 @@ export const dataList = [
       },
     ],
     gifs: [datadisplayGif, searchGif],
+  },
+  {
+    id: "balance",
+    title: "Balance",
+    intro: "A cute mini game for Global Game Jam 2022.",
+    img: balanceGif,
+    href: "https://globalgamejam.org/2022/games/balance-5",
+    tags: ["Unity", "C#"],
+    background:
+      'This is an entry work for Global Game Jam 2022. The theme is "Duality", so I with my 3 friends made a game that tells a story about a girl waking up and doing stuff to try to balance herself. It was made in two days. We had a lot of fun.',
+    techstack: [
+      {
+        name: "Unity",
+        intro:
+          "The turning page effect is implemented by the plugin from Unity Asset Store. I was responsible for the effect of camera movement crossing the comic frames, the walking scene, and the coffee-making scene. ",
+      },
+      {
+        name: "C#",
+        intro: "It is the main development language for this game.",
+      },
+    ],
+    gifs: [turnpageGif, bangGif, makecoffeeGif],
   },
   {
     id: "golden-miner",

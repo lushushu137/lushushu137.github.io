@@ -55,7 +55,7 @@ const ProjectDetail = (props) => {
           </div>
           <div className="project-detail-left__gifs">
             {gifs.map((gif, index) => (
-              <motion.img src={gif} width="80%" alt="" />
+              <motion.img src={gif} width="80%" alt="" key={index} />
             ))}
           </div>
         </div>

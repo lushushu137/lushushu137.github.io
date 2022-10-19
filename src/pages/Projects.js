@@ -8,17 +8,25 @@ import { motion, AnimatePresence } from "framer-motion";
 const Projects = () => {
   const [selectedId, setSelectedId] = useState(null);
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Typography variant="body2" align="center" sx={{ p: 5 }}>
         Hello, my name is Lu Shu. I am a web developer. I also like making
         games. These are craps I made.
       </Typography>
 
       <Box
+        width="80%"
         display="flex"
         alignItems="center"
         flexWrap="wrap"
-        gap="30px"
+        gap="50px"
         justifyContent="center"
       >
         {dataList.map((project, index) => (
@@ -45,7 +53,7 @@ const Projects = () => {
           )}
         </AnimatePresence>
       </Box>
-    </>
+    </div>
   );
 };
 
