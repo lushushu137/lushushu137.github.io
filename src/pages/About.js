@@ -39,7 +39,7 @@ const About = () => {
         Email: lushu100fen@gmail.com
       </Typography>
       <Typography variant="body2" align="center" gutterBottom>
-        Tel: (+852) 65393681
+        Tel: (+852) 65393681 | (+86) 17801076632
       </Typography>
       <Typography variant="body2" align="center" gutterBottom>
         Hong Kong | Shanghai
